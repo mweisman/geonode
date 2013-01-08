@@ -23,6 +23,7 @@ the project has built a map composer and viewer, tools for
 analysis, and reporting tools.
 
 %build
+pushd $GEONODE_EXT_ROOT
 mvn clean install
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/usr/share/geonode/geoserver
