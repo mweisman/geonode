@@ -14,7 +14,7 @@
 
 build:
 	# build geoserver with exts
-	mvn clean install
+	mvn clean install -s ./debian/mvn_settings.xml
 
 install:
 	dh_testdir
