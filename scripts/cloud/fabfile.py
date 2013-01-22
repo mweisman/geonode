@@ -178,7 +178,11 @@ def deploy_geonode_testing_package():
 def deploy_geonode_snapshot_package():
     sudo('add-apt-repository -y ppa:geonode/snapshots') 
     sudo('apt-get update')
+    sudo('curl -O http://build.geonode.org/geoserver/latest/geoserver-geonode_2.0%2b2_all.deb; dpkg -i geoserver-geonode_2.0+2_all.deb')
+    sudo('apt-get install -f')
     sudo('apt-get install -f -y geonode')
+    sudo('service apache2 restart')
+    sudo('service tomcat7 restart')
 
 def deploy_geonode_dev_package():
     sudo('add-apt-repository -y ppa:geonode/unstable') 
